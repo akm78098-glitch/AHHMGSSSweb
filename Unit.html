@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Art. Hachalu Hundessa Memorial | Gimbi Special Secondary School</title>
+
+    <!-- ========== SOCIAL MEDIA PREVIEW ========== -->
+    <meta property="og:title" content="Art. Hachalu Hundessa Memorial | Gimbi Special Secondary School">
+    <meta property="og:description" content="🏫 Est. 2013 E.C. | 144+ Students Trained | Building Technology | 🌟 Educating with Purpose">
+    <meta property="og:image" content="ahhmgsss.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Art. Hachalu Hundessa Memorial School">
+    <meta name="twitter:description" content="🏫 Gimbi Special Secondary School | Est. 2013 E.C.">
+    <meta name="theme-color" content="#1e3c2f">
+
+    <!-- ========== PERFORMANCE ========== -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta http-equiv="Cache-Control" content="max-age=86400">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #f5efe8; --surface: #ffffff; --text: #2e241f; --text-light: #4b3b2c;
+            --primary: #2d5a3b; --primary-dark: #1e3c2f; --accent: #b48c5c; --accent-gold: #f3c26b;
+            --border: #e7d7c0; --hero-gradient: linear-gradient(135deg, #1e3c2f 0%, #2a4b34 40%, #5c402b 100%);
+            --card-shadow: 0 15px 30px rgba(88, 60, 30, 0.08); --transition: 0.3s ease;
+        }
+        .dark-mode {
+            --bg: #1a1a1a; --surface: #2a2a2a; --text: #e0d6c8; --text-light: #c4b8a5;
+            --primary: #3d7a4f; --primary-dark: #0f1f16; --accent: #c9a06b; --accent-gold: #f3c26b;
+            --border: #444; --hero-gradient: linear-gradient(135deg, #0f1f16 0%, #1a2e20 40%, #2e1a10 100%);
+            --card-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); background: #1a1a1a !important; color: #e0d6c8 !important;
+        }
+        .dark-mode .inner-container, .dark-mode .card, .dark-mode .accordion, .dark-mode .accordion-body,
+        .dark-mode .album-card, .dark-mode .highlight-box, .dark-mode .contact-details,
+        .dark-mode .gallery-item .gallery-caption, .dark-mode .download-link { background: #2a2a2a !important; color: #e0d6c8 !important; }
+        .dark-mode .accordion-header { background: #333 !important; color: #e0d6c8 !important; }
+        .dark-mode .btn { background: #444 !important; color: #e0d6c8 !important; border-color: #555 !important; }
+        .dark-mode .btn:hover { background: #3d7a4f !important; color: white !important; }
+        .dark-mode table th { background: #2a2a2a !important; }
+        .dark-mode table td { border-color: #444 !important; background: #1e1e1e !important; color: #e0d6c8 !important; }
+        .dark-mode .calendar-table .holiday { background: #3d3520 !important; }
+        .dark-mode footer { background: #0a0a0a !important; }
+        .dark-mode .navbar { background: #1a1a1a !important; }
+        .dark-mode .sidebar { background: #0a0a0a !important; }
+        .dark-mode .hero { background: linear-gradient(135deg, #0f1f16 0%, #1a2e20 40%, #2e1a10 100%) !important; }
+        .dark-mode .card-icon { background: #3d7a4f !important; }
+        .dark-mode .music-link { background: #cc0000 !important; }
+        .dark-mode .countdown-symbol { background: #3d2b1a !important; border-color: #f3c26b !important; color: #f3c26b !important; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.6; transition: background var(--transition), color var(--transition); }
+
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #1e3c2f; z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease, visibility 0.5s ease; }
+        #loader.hidden { opacity: 0; visibility: hidden; }
+        #loader .spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.3); border-top-color: #f3c26b; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent-gold); z-index: 99999; transition: width 0.1s; }
+
+        .navbar { background: var(--primary-dark); padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; color: #f7f3e0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); min-height: 56px; }
+        .navbar .logo-area { display: flex; align-items: center; gap: 0.6rem; flex: 1; }
+        .school-logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold); flex-shrink: 0; cursor: pointer; transition: transform 0.3s; }
+        .school-logo-img:hover { transform: scale(1.1); }
+        .navbar .logo-text { font-weight: 700; font-size: 0.8rem; line-height: 1.2; }
+        .navbar .logo-text small { display: block; font-weight: 400; font-size: 0.65rem; color: #e7d7b8; }
+        .artist-tag { font-size: 0.7rem; color: var(--accent-gold); font-weight: 600; }
+        .nav-links { display: flex; gap: 0.8rem; align-items: center; }
+        .nav-links .nav-group { display: flex; gap: 0.6rem; align-items: center; }
+        .nav-links .nav-divider { color: var(--accent-gold); font-weight: 700; font-size: 0.65rem; padding: 0 0.2rem; opacity: 0.7; }
+        .nav-links a { color: #ede3d0; text-decoration: none; font-weight: 500; font-size: 0.75rem; padding: 0.2rem 0; border-bottom: 2px solid transparent; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+        .hamburger { display: none; background: none; border: none; color: #f7f3e0; font-size: 1.6rem; cursor: pointer; padding: 0.2rem; z-index: 101; }
+        .countdown-symbol { width: 36px; height: 36px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 2px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-weight: 800; font-size: 1rem; cursor: pointer; flex-direction: column; line-height: 1; flex-shrink: 0; margin-left: 8px; }
+        .countdown-symbol small { font-size: 5px; font-weight: 400; text-transform: uppercase; }
+
+        .sidebar-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 200; }
+        .sidebar-overlay.open { display: block; }
+        .sidebar { position: fixed; top: 0; right: -280px; width: 250px; height: 100%; background: #1e3c2f; z-index: 201; transition: right 0.3s ease; padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.6rem; }
+        .sidebar.open { right: 0; }
+        .sidebar .close-btn { align-self: flex-end; background: none; border: none; color: #f7f3e0; font-size: 1.5rem; cursor: pointer; }
+        .dark-toggle-sidebar { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #f7f3e0; padding: 0.4rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; width: 100%; justify-content: center; }
+        .sidebar .sidebar-group-title { color: var(--accent-gold); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.3rem; margin-top: 0.4rem; }
+        .sidebar a { color: #ede3d0; text-decoration: none; font-weight: 500; font-size: 0.9rem; padding: 0.35rem 0; display: block; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .sidebar a:hover, .sidebar a.active { color: var(--accent-gold); }
+
+        .quote-box { background: var(--accent-gold); color: #1e3c2f; padding: 8px 12px; border-radius: 8px; text-align: center; font-style: italic; margin: 10px auto 15px; max-width: 600px; font-weight: 500; font-size: 0.8rem; cursor: pointer; }
+        .page { display: none; animation: fadeIn 0.3s ease; }
+        .page.active-page { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+        .hero { background: var(--hero-gradient); color: #f7f3e0; padding: 1.5rem 1rem 2rem; clip-path: polygon(0 0, 100% 0, 100% 93%, 0% 100%); margin-bottom: 1.5rem; }
+        .hero-content { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+        .hero-text { flex: 2; min-width: 250px; }
+        .hero h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.2rem; }
+        .hero .subtitle { font-size: 1rem; color: #e7d7b8; margin-bottom: 0.3rem; border-left: 3px solid #d9a066; padding-left: 0.8rem; }
+        .hero p { font-size: 0.85rem; color: #ede3d0; }
+        .hero-badge { flex: 1; text-align: center; background: rgba(255,255,240,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 1rem; border: 1px solid rgba(255,215,140,0.3); min-width: 130px; }
+        .hero-badge i { font-size: 2rem; color: var(--accent-gold); margin-bottom: 0.3rem; }
+        .hero-badge span { display: block; font-weight: 600; font-size: 1rem; color: #fff3dc; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .card { background: var(--surface); border-radius: 16px; padding: 1rem; box-shadow: var(--card-shadow); transition: all var(--transition); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: flex-start; }
+        .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .card-icon { background: var(--primary); width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.6rem; color: white; font-size: 1.2rem; }
+        .card h3 { font-size: 1.1rem; font-weight: 650; margin-bottom: 0.3rem; color: var(--text); }
+        .card p { color: var(--text-light); margin-bottom: 0.6rem; font-size: 0.8rem; }
+        .btn { margin-top: auto; background: #f6f1e7; padding: 0.35rem 0.9rem; border-radius: 20px; text-decoration: none; font-weight: 600; color: #2b4f2b; display: inline-flex; align-items: center; gap: 0.2rem; transition: var(--transition); border: 1px solid var(--accent); font-size: 0.75rem; cursor: pointer; }
+        .btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .inner-container { max-width: 850px; margin: 1.5rem auto; padding: 1.5rem; background: var(--surface); border-radius: 16px; box-shadow: var(--card-shadow); border: 1px solid var(--border); }
+        .inner-container h1 { font-size: 1.4rem; color: var(--text); margin-bottom: 0.2rem; }
+        .inner-container h1 i { color: var(--accent); margin-right: 0.4rem; }
+        .inner-container hr { border: none; height: 2px; background: linear-gradient(to right, var(--accent), var(--border)); margin: 0.6rem 0 1rem; border-radius: 2px; }
+        .inner-container h2 { font-size: 1.1rem; color: var(--text); margin-top: 1.2rem; margin-bottom: 0.4rem; border-bottom: 2px solid var(--border); padding-bottom: 0.2rem; }
+        .inner-container h3 { font-size: 0.9rem; color: var(--primary); margin-top: 1rem; margin-bottom: 0.3rem; border-left: 3px solid var(--accent); padding-left: 0.5rem; }
+        .inner-container p, .inner-container li { color: var(--text-light); margin-bottom: 0.6rem; font-size: 0.85rem; }
+        .highlight-box { background: #fef9f2; border-left: 4px solid var(--accent); padding: 0.6rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; font-style: italic; color: #3d4a2c; }
+        .album-card { background: #f9f4eb; border-radius: 10px; padding: 0.6rem; margin: 0.5rem 0; border: 1px solid var(--border); }
+        .music-link { display: inline-flex; align-items: center; gap: 0.2rem; background: #ff0000; color: white; padding: 0.25rem 0.6rem; border-radius: 15px; text-decoration: none; font-weight: 600; font-size: 0.7rem; margin: 0.1rem 0.2rem; transition: 0.2s; }
+        .school-photo { width: 100%; max-height: 300px; object-fit: cover; border-radius: 12px; margin: 0.8rem 0; border: 2px solid var(--border); display: block; cursor: pointer; }
+        .achievement-table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.8rem; }
+        .achievement-table th { background: var(--primary); color: white; padding: 0.5rem; text-align: left; }
+        .achievement-table td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+        .gallery-item { border-radius: 10px; overflow: hidden; border: 2px solid transparent; transition: var(--transition); }
+        .gallery-item:hover { border-color: var(--accent-gold); }
+        .gallery-item .gallery-img { width: 100%; height: 130px; object-fit: cover; display: block; cursor: pointer; }
+        .gallery-item .gallery-video { width: 100%; height: 130px; object-fit: cover; display: block; background: #000; }
+        .gallery-item .gallery-caption { padding: 0.4rem; font-size: 0.7rem; color: var(--text); background: var(--surface); text-align: center; }
+        .pomodoro { background: var(--primary); color: white; border-radius: 12px; padding: 1.2rem; text-align: center; margin: 1rem 0; }
+        .pomodoro .timer-display { font-size: 2.5rem; font-weight: 800; }
+        .pomodoro button { background: white; color: var(--primary); border: none; padding: 0.4rem 1rem; border-radius: 15px; font-weight: 700; cursor: pointer; margin: 0.2rem; }
+        .accordion { background: #f9f4eb; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.4rem; overflow: hidden; }
+        .accordion-header { padding: 0.6rem 0.8rem; font-weight: 650; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; font-size: 0.85rem; }
+        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fffdf9; padding: 0 0.8rem; }
+        .accordion-body.open { max-height: 300px; padding: 0.6rem 0.8rem; }
+        .calendar-table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.75rem; }
+        .calendar-table th { background: var(--primary); color: white; padding: 0.4rem; }
+        .calendar-table td { padding: 0.3rem; border: 1px solid var(--border); }
+        .calendar-table .holiday { background: #fff3cd; font-weight: 600; }
+        .download-link { display: flex; align-items: center; gap: 0.3rem; background: #f6f1e7; padding: 0.5rem 0.7rem; border-radius: 8px; margin: 0.3rem 0; text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.8rem; border: 1px solid var(--border); }
+        .contact-details { background: #fef9f2; border-radius: 10px; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--border); }
+        .back-to-top { position: fixed; bottom: 70px; right: 15px; width: 34px; height: 34px; border-radius: 50%; background: #2d5a3b; color: white; border: none; font-size: 14px; cursor: pointer; z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.3); display: none; align-items: center; justify-content: center; }
+        .back-to-top.show { display: flex; }
+        .search-btn { position: fixed; bottom: 110px; right: 15px; width: 34px; height: 34px; border-radius: 50%; background: #2d5a3b; color: white; border: none; font-size: 14px; cursor: pointer; z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .music-btn-float { position: fixed; bottom: 150px; right: 15px; width: 34px; height: 34px; border-radius: 50%; background: #2d5a3b; color: white; border: none; cursor: pointer; z-index: 9998; font-size: 14px; }
+        .search-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: flex-start; padding-top: 80px; }
+        .search-overlay.open { display: flex; }
+        .search-overlay input { width: 90%; max-width: 450px; padding: 12px 16px; border-radius: 25px; border: none; font-size: 1rem; outline: none; }
+        .search-results { width: 90%; max-width: 450px; background: white; border-radius: 10px; margin-top: 8px; max-height: 250px; overflow-y: auto; }
+        .search-results div { padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+        .search-results div:hover { background: #f0f0f0; }
+        .notification { position: fixed; top: -100px; left: 50%; transform: translateX(-50%); padding: 10px 18px; border-radius: 8px; z-index: 99999; font-weight: 600; font-size: 0.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: top 0.4s ease; max-width: 300px; text-align: center; }
+        .notification.show { top: 15px; }
+        .notification.success { background: #2d5a3b; color: white; }
+        .notification.info { background: #3d7a4f; color: white; }
+        .visitor-counter { text-align: center; padding: 3px; font-size: 0.7rem; color: var(--text-light); }
+        .zoom-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 99999; justify-content: center; align-items: center; flex-direction: column; }
+        .zoom-modal.open { display: flex; }
+        .zoom-modal img { max-width: 90%; max-height: 80%; border-radius: 10px; }
+        .zoom-modal .close-zoom { color: white; font-size: 30px; cursor: pointer; margin-top: 15px; }
+        .rate-stars { font-size: 1.5rem; cursor: pointer; }
+        .rate-stars span:hover { transform: scale(1.3); }
+        footer { background: var(--primary-dark); color: #ddd2bc; padding: 1.5rem 1rem; margin-top: 1.5rem; border-radius: 16px 16px 0 0; text-align: center; }
+        .footer-content { max-width: 700px; margin: 0 auto; }
+        .social-icons { margin-top: 0.6rem; }
+        .social-icons a { color: #e7cfaa; margin: 0 0.4rem; font-size: 1.2rem; }
+        .social-icons a:hover { color: var(--accent-gold); }
+        .share-btn-float { position: fixed; bottom: 190px; right: 15px; width: 34px; height: 34px; border-radius: 50%; background: #2d5a3b; color: white; border: none; font-size: 14px; cursor: pointer; z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: block; } .hero { clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%); } .inner-container { padding: 1rem; margin: 0.8rem; } .hero h1 { font-size: 1.3rem; } .countdown-symbol { width: 32px; height: 32px; font-size: 0.9rem; } }
+        @media (max-width: 400px) { .info-grid { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr 1fr; } .navbar { padding: 0.4rem 0.6rem; } .hero { padding: 1rem 0.8rem 1.5rem; } }
+    </style>
+</head>
+<body>
+
+ <div id="loader"><div class="spinner"></div></div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="hace.png" alt="School Logo" class="school-logo-img" onclick="openZoom('hace.png')" title="Click to zoom">
+            <div class="logo-text">Art. Hachalu Hundessa Memorial<br><small>Gimbi Special Secondary School</small><div class="artist-tag">🎤 Hachalu Hundessa</div></div>
+        </div>
+        <div class="countdown-symbol" onclick="showNotification('🕯️ Memorial Day of Hachalu Hundessa: June 29','info',4000)"><span id="countdownDays">0</span><small>days</small></div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="desktopNav">
+            <div class="nav-group"><span class="nav-divider">🏫</span><a data-page="home" class="active">Home</a><a data-page="about">About</a><a data-page="achievements">Achievements</a><a data-page="calendar">Calendar</a><a data-page="gallery">Gallery</a><a data-page="guide">Guide</a><a data-page="resources">Resources</a><a data-page="contact">Contact</a></div>
+            <div class="nav-group"><span class="nav-divider">🎤</span><a data-page="biography">Biography</a><a data-page="music">Music</a></div>
+        </div>
+    </nav>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar"><i class="fas fa-times"></i></button>
+        <button class="dark-toggle-sidebar" id="darkToggleSidebar"><i class="fas fa-moon"></i> Dark Mode</button>
+        <div class="sidebar-group-title">🏫 SCHOOL</div><a data-page="home" class="active">Home</a><a data-page="about">About School</a><a data-page="achievements">Achievements</a><a data-page="calendar">Academic Calendar</a><a data-page="gallery">Photo Gallery</a><a data-page="guide">Student Guide</a><a data-page="resources">Resources</a><a data-page="contact">Contact</a>
+        <div class="sidebar-group-title">🎤 HACHALU</div><a data-page="biography">Biography</a><a data-page="music">Music & Albums</a>
+    </div>
+
+    <div class="notification" id="notification"></div>
+    <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)this.classList.remove('open')"><input type="text" id="searchInput" placeholder="🔍 Search..." oninput="doSearch()"><div class="search-results" id="searchResults"></div></div>
+    <div class="zoom-modal" id="zoomModal" onclick="this.classList.remove('open')"><img src="" alt="Zoomed" id="zoomImg"><span class="close-zoom">✕</span></div>
+
+    <!-- ========== HOME PAGE - UNTOUCHED ========== -->
+    <div id="page-home" class="page active-page">
+        <div class="hero"><div class="hero-content"><div class="hero-text"><h1>Art. Hachalu Hundessa Memorial</h1><div class="subtitle">Gimbi Special Secondary School</div><p><i class="fas fa-map-pin"></i> Gimbi, West Wollega, Oromia · Est. 2013 E.C.</p></div><div class="hero-badge"><i class="fas fa-dove"></i><span>"Maalan Jira"</span></div></div></div>
+        <div class="container">
+            <div class="quote-box" id="dailyQuote"></div>
+            <div class="info-grid">
+                <div class="card"><div class="card-icon"><i class="fas fa-school"></i></div><h3>About School</h3><p>Est. 2013 E.C. — 144+ students in building technology.</p><span class="btn" data-page="about">Learn more <i class="fas fa-arrow-right"></i></span></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-trophy"></i></div><h3>Achievements</h3><p>School awards & student success stories.</p><span class="btn" data-page="achievements">View <i class="fas fa-arrow-right"></i></span></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-calendar-alt"></i></div><h3>Calendar</h3><p>Key dates: enrollment, exams, holidays.</p><span class="btn" data-page="calendar">Calendar <i class="fas fa-arrow-right"></i></span></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-images"></i></div><h3>Gallery</h3><p>School campus & memorial events.</p><span class="btn" data-page="gallery">View <i class="fas fa-arrow-right"></i></span></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-graduation-cap"></i></div><h3>Student Guide</h3><p>70+ Q&A + Pomodoro timer.</p><span class="btn" data-page="guide">Read <i class="fas fa-arrow-right"></i></span></div>
+                <div class="card"><div class="card-icon"><i class="fas fa-microphone-alt"></i></div><h3>Hachalu Hundessa</h3><p>Biography, music & legacy.</p><span class="btn" data-page="biography">Explore <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="visitor-counter">👁️ <span id="visitorCount">0</span> visitors | 📄 <span id="pageViews">0</span> views | 🕐 Updated: <span id="lastUpdate"></span></div>
+            <div style="text-align:center;margin:10px 0;">
+                <span class="rate-stars" id="rateStars">
+                    <span onclick="rateSite(1)">⭐</span><span onclick="rateSite(2)">⭐</span><span onclick="rateSite(3)">⭐</span><span onclick="rateSite(4)">⭐</span><span onclick="rateSite(5)">⭐</span>
+                </span>
+                <div id="rateMsg" style="font-size:0.7rem;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ABOUT PAGE ========== -->
+    <div id="page-about" class="page"><div class="inner-container"><h1><i class="fas fa-landmark"></i> About Our School</h1><hr><img src="ahhmgsss.jpg" alt="School" class="school-photo" loading="lazy" onclick="openZoom('ahhmgsss.jpg')"><p style="text-align:center;font-size:0.75rem;"><em>Main Building — Gimbi Town (Tap to zoom)</em></p><h3>Establishment</h3><p>Established in <strong>2013 E.C.</strong> in Gimbi, West Wollega, Oromia. 144+ students trained.</p><h3>Mission</h3><p>To produce competent, adaptable, innovative manpower through outcome-based education.</p><h3>Vision</h3><p>Centre of excellence in building technology training.</p><h3>Key Activities</h3><ul><li>Building Technology Array</li><li>Small Scale Micro Enterprise</li><li>Technology Transfer</li><li>Industry Manpower</li><li>Capacity Building</li></ul><h3>Values</h3><p>Equality · Academic Freedom · Social Responsibility · Teamwork · Excellence · Integrity</p>
+        <!-- School Location Mini Map -->
+        <div style="text-align:center;margin:10px 0;"><a href="https://www.google.com/maps?q=Artist+Hacalu+Hundesa+Memorial+Gimbi+Secondary+Secondary +School+West+Wollega+Oromia+Ethiopia" target="_blank" class="btn"><i class="fas fa-map-marker-alt"></i> View School on Map</a></div>
+        <!-- QR Code -->
+        <div style="text-align:center;margin:10px 0;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=AHHMGSSS" alt="QR Code" style="border-radius:10px;"><p style="font-size:0.7rem;">📱 Scan to visit website</p></div>
+    <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== ACHIEVEMENTS PAGE - UNTOUCHED ========== -->
+    <div id="page-achievements" class="page"><div class="inner-container"><h1><i class="fas fa-trophy"></i> Achievements</h1><hr><h2>🏆 Institutional Awards</h2><table class="achievement-table"><thead><tr><th>Year</th><th>Achievement</th><th>By</th></tr></thead><tbody><tr><td>2016 E.C.</td><td>Passing All Students</td><td>Oromia Education Bureau</td></tr><tr><td>2017 E.C.</td><td>Passing All Students</td><td>Oromia Education Bureau</td></tr><tr><td>2018+ (Future)</td><td>Top Performer Award</td><td>Ministry of Education</td></tr></tbody></table><h2>🎓 Student Achievement</h2><table class="achievement-table"><thead><tr><th>Student</th><th>Year</th><th>Achievement</th></tr></thead><tbody><tr><td>Guutu Habatamu</td><td>2014 E.C.</td><td>Winner — Competition in Adama City</td></tr></tbody></table><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== CALENDAR PAGE - UNTOUCHED ========== -->
+    <div id="page-calendar" class="page"><div class="inner-container"><h1><i class="fas fa-calendar-alt"></i> Academic Calendar</h1><hr><table class="calendar-table"><thead><tr><th>Month</th><th>Event</th><th>Details</th></tr></thead><tbody><tr><td>Hagayyaa 23</td><td>New Year Begins</td><td>Registration</td></tr><tr class="holiday"><td>Fulbaana 1</td><td>Enkutatash</td><td>Holiday</td></tr><tr><td>Fulbaana 5</td><td>Semester Starts</td><td>First Day</td></tr><tr class="holiday"><td>Fulbaana 17</td><td>Masqal</td><td>Holiday</td></tr><tr><td>Amajjii</td><td>Final Exams S1</td><td>All Subjects</td></tr><tr class="holiday"><td>Amajjii 11</td><td>Timket</td><td>Holiday</td></tr><tr><td>Guraandhala 2</td><td>Semester 2</td><td>Opening</td></tr><tr><td>Waxabajjii 11</td><td>Final Exams</td><td>End of Year</td></tr><tr><td>Waxabajjii 17-24</td><td>Graduation 🎓</td><td>Awarding</td></tr></tbody></table><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== GALLERY PAGE ========== -->
+    <div id="page-gallery" class="page"><div class="inner-container"><h1><i class="fas fa-images"></i> Photo Gallery</h1><hr><div class="gallery">
+        <div class="gallery-item"><img src="ahhmgsss.jpg" alt="School" class="gallery-img" loading="lazy" onclick="openZoom('ahhmgsss.jpg')"><div class="gallery-caption">Main Building (Tap to zoom)</div></div>
+        <div class="gallery-item"><img src="ques.jpg" alt="Q&A" class="gallery-img" loading="lazy" onclick="openZoom('ques.jpg')"><div class="gallery-caption">Q&A Program (Tap to zoom)</div></div>
+        <div class="gallery-item"><img src="sport.jpg" alt="Sports" class="gallery-img" loading="lazy" onclick="openZoom('sport.jpg')"><div class="gallery-caption">Sports ⚽ (Tap to zoom)</div></div>
+        <div class="gallery-item"><img src="farm.png" alt="Farm" class="gallery-img" loading="lazy" onclick="openZoom('farm.png')"><div class="gallery-caption">Farm Practice (Tap to zoom)</div></div>
+        <div class="gallery-item"><img src="senior.jpg" alt="Seniors" class="gallery-img" loading="lazy" onclick="openZoom('senior.jpg')"><div class="gallery-caption">Senior Classes (Tap to zoom)</div></div>
+        <div class="gallery-item"><img src="balle.png" alt="Cultural" class="gallery-img" loading="lazy" onclick="openZoom('balle.png')"><div class="gallery-caption">Balle Ceremony (Tap to zoom)</div></div>
+        <div class="gallery-item"><video controls class="gallery-video" preload="none"><source src="ceremony.mp4" type="video/mp4"></video><div class="gallery-caption">🎥 🎊 We danced. We laughed. We shared cake and stories. Not because we reached a finish line, but because we walked the journey together. Every challenge made us stronger. Every moment made us family.</div></div>
+                <div class="gallery-item"><img src="teacher.jpg" alt="Cultural" class="gallery-img" loading="lazy" onclick="openZoom('teacher.jpg')"><div class="gallery-caption">Our Dedicated Teachers — The backbone of AHHMGSSS. Through their hard work, guidance, and commitment, they shape the future of every student who walks through these halls.</div></div>
+    </div><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== STUDENT GUIDE - 70+ Q&A ========== -->
+    <div id="page-guide" class="page"><div class="inner-container"><h1><i class="fas fa-graduation-cap"></i> Student Guide</h1><hr><div class="pomodoro"><h2 style="color:white;">⏱️ Pomodoro Timer</h2><div class="timer-display" id="timerDisplay">25:00</div><div><button id="pomodoroStart"><i class="fas fa-play"></i> Start</button><button id="pomodoroReset"><i class="fas fa-redo"></i> Reset</button></div></div><h2>70+ Student Questions</h2>
+        <div class="accordion"><div class="accordion-header">1. How to create a study timetable? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>List all subjects. Allocate more time to difficult ones. Use 45-min blocks with 10-min breaks. Update every two weeks.</p></div></div>
+        <div class="accordion"><div class="accordion-header">2. Best way to prepare for exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Start 3-4 months early. Practice past papers. Join study groups. Review mistakes. Sleep 7-8 hours.</p></div></div>
+        <div class="accordion"><div class="accordion-header">3. How to improve memory? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Active recall. Mind maps. Teach others. Mnemonics. Get enough sleep. Review within 24 hours.</p></div></div>
+        <div class="accordion"><div class="accordion-header">4. How to manage exam stress? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Deep breathing. Exercise. Break tasks small. Talk to someone. Take breaks. One exam doesn't define you.</p></div></div>
+        <div class="accordion"><div class="accordion-header">5. Scholarship tips? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Apply 6-12 months early. Transcripts, recommendations, essay. Write personal story. Apply to many.</p></div></div>
+        <div class="accordion"><div class="accordion-header">6. What is the Pomodoro Technique? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>25 min study, 5 min break. Repeat 4x. Long break 15-30 min. Use the timer above!</p></div></div>
+        <div class="accordion"><div class="accordion-header">7. How to stay motivated? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Set small goals. Reward yourself. Study with friends. Track progress. Remember your dreams.</p></div></div>
+        <div class="accordion"><div class="accordion-header">8. Best foods for studying? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Protein, fruits, nuts, whole grains. Drink water. Avoid oily meals, sugar, caffeine.</p></div></div>
+        <div class="accordion"><div class="accordion-header">9. How much sleep needed? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>7-8 hours. Sleep consolidates memory. Avoid all-nighters. Keep consistent schedule.</p></div></div>
+        <div class="accordion"><div class="accordion-header">10. How to handle difficult subjects? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Find real connection. Break into small topics. Ask classmate. Use YouTube tutorials.</p></div></div>
+                <div class="accordion"><div class="accordion-header">11. Best study techniques for science? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Draw diagrams. Solve numerical problems daily. Understand formulas. Conduct simple experiments. Use flashcards. Watch educational videos.</p></div></div>
+        <div class="accordion"><div class="accordion-header">12. How to prepare for math exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice daily — the only way. Start easy, increase difficulty. Write all steps. Learn from mistakes. Memorize key formulas but understand derivations.</p></div></div>
+        <div class="accordion"><div class="accordion-header">13. How to improve English skills? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Read English daily. Watch programs with subtitles. Practice speaking with friends. Keep vocabulary notebook. Write essays. Get feedback.</p></div></div>
+        <div class="accordion"><div class="accordion-header">14. What is the Pomodoro Technique? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Study 25 min, break 5 min. Repeat 4x, then long break 15-30 min. Use timer above to practice this proven technique.</p></div></div>
+        <div class="accordion"><div class="accordion-header">15. How to stay motivated? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Set small daily goals. Reward yourself. Remember long-term dreams. Study with motivated friends. Change environment. Track progress.</p></div></div>
+        <div class="accordion"><div class="accordion-header">16. What foods help studying? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Protein-rich foods, fruits, nuts, whole grains. Drink water. Avoid oily meals, sugar, caffeine. Eat light before studying.</p></div></div>
+        <div class="accordion"><div class="accordion-header">17. How much sleep needed? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>7-8 hours nightly. Sleep consolidates memory. All-nighters reduce performance. Maintain consistent sleep schedule.</p></div></div>
+        <div class="accordion"><div class="accordion-header">18. How to handle difficult subjects? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Find real-world connection. Break into small topics. Ask a classmate. Use YouTube tutorials. Reward yourself after each session.</p></div></div>
+        <div class="accordion"><div class="accordion-header">19. Best way to take notes? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Cornell Method: Notes, Cues, Summary. Write key points only. Use abbreviations. Review and rewrite same day.</p></div></div>
+        <div class="accordion"><div class="accordion-header">20. How to prepare for oral presentations? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice aloud. Record yourself. Prepare note cards. Anticipate questions. Arrive early. Breathe deeply. Speak slowly.</p></div></div>
+        <div class="accordion"><div class="accordion-header">21. How to make group study effective? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Limit to 3-5 members. Set clear agenda. Each member teaches one topic. Quiz each other. Avoid distractions. End with summary.</p></div></div>
+        <div class="accordion"><div class="accordion-header">22. What if I fail an exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Feel disappointed, then move forward. Analyze what went wrong. Talk to teacher. Create new study plan. Failure is a stepping stone.</p></div></div>
+        <div class="accordion"><div class="accordion-header">23. How to balance school and family? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Create weekly schedule. Communicate with family about study needs. Use early morning hours. Combine activities when possible.</p></div></div>
+        <div class="accordion"><div class="accordion-header">24. Best online resources for Ethiopian students? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Ministry of Education site, Khan Academy, Coursera, YouTube educational channels, Ethiopian student Telegram forums.</p></div></div>
+        <div class="accordion"><div class="accordion-header">25. How to choose the right university program? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Identify interests and strengths. Research job demand. Talk to professionals. Consider long-term goals. Choose what fits you.</p></div></div>
+        <div class="accordion"><div class="accordion-header">26. What is a growth mindset? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Belief intelligence can be developed. Embrace challenges. Learn from criticism. Persist through setbacks. "I'm not good at this YET."</p></div></div>
+        <div class="accordion"><div class="accordion-header">27. How to avoid procrastination? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Use 2-minute rule for small tasks. Break tasks tiny. Remove distractions. Set earlier deadlines. Tell someone your goals.</p></div></div>
+        <div class="accordion"><div class="accordion-header">28. How to improve handwriting? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice 10 min daily. Slow down. Use lined paper. Maintain consistent letter size. Legible handwriting earns extra marks.</p></div></div>
+        <div class="accordion"><div class="accordion-header">29. What is the Feynman Technique? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Explain a concept simply as if teaching a child. Identify gaps. Go back to source. If you can't explain simply, you don't understand.</p></div></div>
+        <div class="accordion"><div class="accordion-header">30. Multiple exams in one week? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Create priority list. Study hardest first. Rotate subjects. Use summary sheets. Don't neglect any subject completely.</p></div></div>
+        <div class="accordion"><div class="accordion-header">31. How to find a mentor? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Look among teachers, older students, professionals. Approach respectfully. Show commitment. Be appreciative of their time.</p></div></div>
+        <div class="accordion"><div class="accordion-header">32. Benefits of extracurricular activities? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Develop leadership, teamwork, time management. Strengthen applications. Reduce stress. Build friendships. Balance is key.</p></div></div>
+        <div class="accordion"><div class="accordion-header">33. How to set SMART goals? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Specific, Measurable, Achievable, Relevant, Time-bound. Example: "Score above 80% in math by studying 1 hour daily."</p></div></div>
+        <div class="accordion"><div class="accordion-header">34. How can parents support students? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Provide quiet study space. Ensure nutrition and sleep. Offer encouragement, not pressure. Celebrate effort. Avoid comparing.</p></div></div>
+       <div class="accordion-header">35. What if I don't understand a topic? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Ask teacher immediately. Write down confusion. Ask classmate. Look online. Visit library. Never let confusion accumulate.</p></div></div>
+        <div class="accordion"><div class="accordion-header">36. How to prepare a strong CV? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Include education, awards, volunteer work, skills. One page. Clear headings. Proofread. Ask teacher to review. Update every 6 months.</p></div></div>
+        <div class="accordion"><div class="accordion-header">37. Importance of past exam papers? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Reveal format, question types, marking schemes. Practice time management. Complete at least 5 years of past papers.</p></div></div>
+        <div class="accordion"><div class="accordion-header">38. What to do after completing each topic? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Create questions to test yourself. Identify weak spots. Practice more on difficult areas. Review regularly.</p></div></div>
+        <div class="accordion"><div class="accordion-header">39. Habits of top-performing students? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Consistent routines. Ask questions. Review regularly. Sleep well. Exercise. Set goals. Avoid cramming. Seek help when needed.</p></div></div>
+        <div class="accordion"><div class="accordion-header">40. How to stay focused at home? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Designate study area. Keep it clean. Turn off notifications. Use website blockers. Tell family your schedule. Use instrumental music.</p></div></div>
+        <div class="accordion"><div class="accordion-header">41. What to do during school holidays? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Rest first. Review difficult topics. Read outside curriculum. Learn a new skill. Volunteer. Prepare for upcoming topics.</p></div></div>
+        <div class="accordion"><div class="accordion-header">42. How to handle negative feedback? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Listen without defensiveness. Separate emotions. Ask for specific suggestions. Thank the teacher. Create an action plan.</p></div></div>
+        <div class="accordion"><div class="accordion-header">43. Best ways to revise before an exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Active recall. Mind maps from memory. Teach aloud. Solve past papers. Focus on weak areas. Review, don't re-learn.</p></div></div>
+        <div class="accordion"><div class="accordion-header">44. How can technology help studies? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Educational apps, tutorial videos, online communities, cloud backup. Limit social media — biggest distraction.</p></div></div>
+        <div class="accordion"><div class="accordion-header">45. #1 factor for academic success? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p><strong>Consistency.</strong> Studying a little every day beats cramming. Small efforts compound into massive results. Build daily habits.</p></div></div>
+        <div class="accordion"><div class="accordion-header">46. How to overcome exam fear? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Prepare thoroughly. Practice relaxation. Visualize success. Talk about fears. Some anxiety is normal and can improve focus.</p></div></div>
+        <div class="accordion"><div class="accordion-header">47. Best time of day to study? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Morning (6-10 AM) for most people. Study difficult subjects when most alert. Avoid late-night cramming.</p></div></div>
+        <div class="accordion"><div class="accordion-header">48. How to make studying fun? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Gamify learning. Use colorful notes. Study with friends. Set challenges. Reward progress. Connect topics to real life.</p></div></div>
+        <div class="accordion"><div class="accordion-header">49. How to improve concentration? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice meditation. Eliminate distractions. Study in quiet place. Use Pomodoro. Exercise regularly. Get enough sleep.</p></div></div>
+        <div class="accordion"><div class="accordion-header">50. What if I feel like giving up? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Take a break. Talk to someone you trust. Remember your goals. Look at how far you've come. Break challenges smaller.</p></div></div>
+        <div class="accordion"><div class="accordion-header">51. How to prepare for university entrance? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Start 6+ months early. Get exam syllabus. Practice past papers. Join prep classes. Focus on weak areas.</p></div></div>
+        <div class="accordion"><div class="accordion-header">52. How to manage time between subjects? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Allocate based on difficulty. Use weekly rotation. Don't neglect any. Review each at least twice weekly.</p></div></div>
+        <div class="accordion"><div class="accordion-header">53. How to stay healthy during exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Eat balanced meals. Stay hydrated. Exercise 20-30 min daily. Sleep 7-8 hours. Take breaks. Avoid excessive caffeine.</p></div></div>
+        <div class="accordion"><div class="accordion-header">54. How to deal with difficult teachers? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Stay respectful. Understand their perspective. Focus on learning. Seek help from other sources if needed.</p></div></div>
+        <div class="accordion"><div class="accordion-header">55. How to build self-confidence? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Set and achieve small goals. Celebrate wins. Prepare well. Practice positive self-talk. Surround yourself with supportive people.</p></div></div>
+        <div class="accordion"><div class="accordion-header">56. How to learn from mistakes? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Don't ignore — analyze. Ask why wrong. Write correct answer. Review regularly. Mistakes are best teachers.</p></div></div>
+        <div class="accordion"><div class="accordion-header">57. How to prepare for practical exams? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Practice hands-on repeatedly. Understand theory behind each step. Watch demos. Ask instructors for feedback.</p></div></div>
+        <div class="accordion"><div class="accordion-header">58. How to balance study and social life? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Schedule both. Combine activities (study groups). Set boundaries. Quality over quantity for social time.</p></div></div>
+        <div class="accordion"><div class="accordion-header">59. What to do when overwhelmed? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Stop and breathe. Write everything down. Prioritize. Do one small thing. Ask for help. It's okay to not be okay.</p></div></div>
+        <div class="accordion"><div class="accordion-header">60. How to celebrate achievements? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Acknowledge hard work. Share with family. Reward yourself. Reflect on what worked. Set new goals.</p></div></div>
+        <div class="accordion"><div class="accordion-header">61. How to read faster and understand? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Preview text first. Don't subvocalize. Use pointer. Practice skimming. Summarize after each section. Read actively.</p></div></div>
+        <div class="accordion"><div class="accordion-header">62. How to memorize formulas? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Understand derivation. Write repeatedly. Use mnemonics. Create formula sheet. Practice applying. Review before sleep.</p></div></div>
+        <div class="accordion"><div class="accordion-header">63. How to write better essays? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Outline first. Clear intro, body, conclusion. Use examples. Be concise. Proofread. Ask for feedback. Practice regularly.</p></div></div>
+        <div class="accordion"><div class="accordion-header">64. How to improve vocabulary? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Read widely. Keep word journal. Use new words in sentences. Play word games. Learn root words. Review weekly.</p></div></div>
+        <div class="accordion"><div class="accordion-header">65. How to prepare for multiple choice? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Read all options. Eliminate wrong ones. Watch for absolutes like "always"/"never". Go with first instinct. Manage time.</p></div></div>
+        <div class="accordion"><div class="accordion-header">66. How to avoid silly mistakes? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Read questions twice. Double-check calculations. Review answers if time. Stay calm. Underline key words in questions.</p></div></div>
+        <div class="accordion"><div class="accordion-header">67. How to study with music? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Use instrumental or classical. Avoid lyrics. Keep volume low. Nature sounds work well. Find what works for you.</p></div></div>
+        <div class="accordion"><div class="accordion-header">68. How to create mind maps? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Central topic in middle. Branch main ideas. Add sub-branches. Use colors and images. Keep keywords short. Review regularly.</p></div></div>
+        <div class="accordion"><div class="accordion-header">69. How to prepare the morning of exam? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Wake early. Eat light breakfast. Review key points only. Arrive 30 min early. Stay calm. Avoid discussing with anxious friends.</p></div></div>
+        <div class="accordion"><div class="accordion-header">70. How to continue learning after school? <i class="fas fa-chevron-down"></i></div><div class="accordion-body"><p>Read books. Take online courses. Attend workshops. Join communities. Teach others. Stay curious. Learning never ends.</p></div></div>
+    <p style="text-align:center;margin:10px 0;font-style:italic;">(70+ questions in full version)</p><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== RESOURCES PAGE ========== -->
+    <div id="page-resources" class="page"><div class="inner-container"><h1><i class="fas fa-book-open"></i> Resources</h1><hr><h3>🔗 Useful Links</h3>
+        <a href="https://www.youtube.com/@marvelenglishtube" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> Marvel English Tube</a>
+        <a href="https://www.indiabix.com" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> IndiaBix</a>
+        <a href="https://www.youtube.com/@zsecretacademy" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> Z Secret Academy</a>
+        <a href="https://cursa.app/en" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> Cursa (Free Courses)</a>
+        <a href="https://t.me/englishlearnerspro" target="_blank" class="download-link"><i class="fas fa-external-link-alt"></i> English Grammar Daily</a>
+        <h3>📚 Downloads</h3>
+        <a href="top 50 aptitude test.pdf" class="download-link" download><i class="fas fa-file-alt"></i> Aptitude Test</a>
+        <a href="sat.pdf" class="download-link" download><i class="fas fa-file-alt"></i> SAT Prep</a>
+        <a href="scholarship.pdf" class="download-link" download><i class="fas fa-file-alt"></i> Scholarship Guide</a>
+    <br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== CONTACT PAGE ========== -->
+    <div id="page-contact" class="page"><div class="inner-container"><h1><i class="fas fa-envelope"></i> Contact</h1><div class="contact-details"><p><i class="fas fa-map-marker-alt"></i> Gimbi, West Wollega, Oromia</p><p><i class="fas fa-phone-alt"></i> +251-901632512</p><p><i class="fas fa-envelope"></i> info@hhmemorialschool.edu.et</p></div><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== BIOGRAPHY PAGE ========== -->
+    <div id="page-biography" class="page"><div style="background:linear-gradient(135deg,#1e3c2f,#2a4b34,#3d2b1a);color:#f7f3e0;padding:1.5rem;text-align:center;clip-path:polygon(0 0,100% 0,100% 90%,0 100%);margin-bottom:1.5rem;"><h1><i class="fas fa-microphone-alt"></i> Art. Hachalu Hundessa</h1><p style="color:#f3c26b;">1986 – June 29, 2020</p></div><div class="inner-container"><p><strong>Art. Hachalu Hundessa</strong> — singer, songwriter, activist. Voice of the Oromo people.</p><h2>Early Life</h2><p>Born 1986 in Ambo. Fifth of eight children.</p><h2>Imprisonment (2003-2008)</h2><p>Arrested at 17. 5 years in Karchale Ambo prison. Composed 9 songs.</p><h2>Rise to Fame</h2><p>Sanyii Mootii (2009). Waa'ee Keenya (2013) — #1 African album on Amazon.</p><h2>Revolution (2015-2018)</h2><p>"Maalan Jiraa?" became the Oromo protest anthem. His music forced regime change.</p><h2>Assassination</h2><p>June 29, 2020 — shot in Addis Ababa at age 34.</p><h2>Legacy</h2><p>Maal Mallisaa released posthumously (2021). Forever remembered. 🕊️</p><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== MUSIC PAGE ========== -->
+    <div id="page-music" class="page"><div class="inner-container"><h1><i class="fas fa-music"></i> Music & Albums</h1><hr><div class="album-card"><strong>Sanyii Mootii</strong> (2009) <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Sanyii+Mootii" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Listen</a></div><div class="album-card"><strong>Waa'ee Keenya</strong> (2013) <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Waa'ee+Keenya" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Listen</a></div><div class="album-card"><strong>Maal Mallisaa</strong> (2021) <a href="https://www.youtube.com/results?search_query=Hachalu+Hundessa+Maal+Mallisaa" target="_blank" class="music-link"><i class="fab fa-youtube"></i> Listen</a></div><br><span class="btn" data-page="home"><i class="fas fa-arrow-left"></i> Back</span></div></div>
+
+    <!-- ========== AI CHATBOT ========== -->
+    <style>.ai-btn{position:fixed;bottom:20px;right:15px;width:50px;height:50px;border-radius:50%;background:#2d5a3b;color:white;border:none;font-size:24px;cursor:pointer;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.ai-box{position:fixed;bottom:80px;right:15px;width:300px;height:380px;background:white;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:9999;display:none;flex-direction:column;overflow:hidden;font-family:sans-serif}.ai-box.show{display:flex}.ai-top{background:#2d5a3b;color:white;padding:10px 14px;font-weight:700;font-size:13px;display:flex;justify-content:space-between}.ai-top button{background:none;border:none;color:white;font-size:16px;cursor:pointer}.ai-mid{flex:1;overflow-y:auto;padding:8px;background:#f5f5f5}.ai-msg{margin:4px 0;padding:8px 10px;border-radius:10px;font-size:12px;max-width:85%}.ai-msg.u{background:#2d5a3b;color:white;margin-left:auto}.ai-msg.b{background:white;color:#333;border:1px solid #ddd}.ai-bot{display:flex;padding:6px;border-top:1px solid #ddd;background:white}.ai-bot input{flex:1;padding:8px;border:1px solid #ccc;border-radius:18px;font-size:12px}.ai-bot button{background:#2d5a3b;color:white;border:none;padding:8px 14px;border-radius:18px;margin-left:5px;font-size:12px;font-weight:600;cursor:pointer}.ai-quick{display:flex;flex-wrap:wrap;gap:3px;padding:5px 8px;background:white;border-top:1px solid #eee}.ai-quick button{background:#eaf2e4;border:1px solid #b8d4a8;padding:3px 7px;border-radius:12px;font-size:9px;cursor:pointer;color:#2d5a3b;font-weight:600}</style>
+    <div class="ai-box" id="aiBox"><div class="ai-top">🤖 AHHMGSSS Assistant <button onclick="toggleAI()">✕</button></div><div class="ai-mid" id="aiMid"><div class="ai-msg b">👋 Ask me about:<br>🏫 School | 🎤 Hachalu | 📝 Exams | 🎓 Scholarships</div></div><div class="ai-quick"><button onclick="replyAI('school')">🏫 School</button><button onclick="replyAI('hachalu')">🎤 Hachalu</button><button onclick="replyAI('exams')">📝 Exams</button><button onclick="replyAI('scholarship')">🎓 Scholarship</button></div><div class="ai-bot"><input type="text" id="aiInput" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter')sendAI()"><button onclick="sendAI()">Send</button></div></div>
+    <button class="ai-btn" onclick="toggleAI()">💬</button>
+
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+    <button class="search-btn" onclick="document.getElementById('searchOverlay').classList.add('open');document.getElementById('searchInput').focus()">🔍</button>
+    <button class="music-btn-float" id="musicBtn" onclick="toggleMusic()">🔇</button>
+    <button class="share-btn-float" onclick="shareSite()">📤</button>
+    <audio id="bgMusic" loop preload="none"><source src="hachalu.mp3" type="audio/mpeg"></audio>
+
+    <!-- ========== FOOTER ========== -->
+    <footer><div class="footer-content"><p style="font-weight:600;font-size:0.9rem;">Art. Hachalu Hundessa Memorial Gimbi Special Secondary School</p><p style="font-size:0.7rem;color:#cbb786;">© 2026 · Oromia, Ethiopia · "Educating with Purpose"</p><p style="font-size:0.7rem;color:var(--accent-gold);">👨‍💻 Built by Senior of 2018 AHHMGSSS Students 🇪🇹</p><div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-telegram-plane"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div></footer>
+
+    <!-- ========== ALL SCRIPTS ========== -->
+    <script>
+        // Loading + Visitor + Welcome
+        window.addEventListener('load',()=>{
+            setTimeout(()=>{document.getElementById('loader').classList.add('hidden');},1200);
+            const v=parseInt(localStorage.getItem('visitors')||0)+1;localStorage.setItem('visitors',v);document.getElementById('visitorCount').textContent=v;
+            const pv=parseInt(localStorage.getItem('pageViews')||0)+1;localStorage.setItem('pageViews',pv);document.getElementById('pageViews').textContent=pv;
+            document.getElementById('lastUpdate').textContent = 'June 17, 2026';
+            const returning=localStorage.getItem('returning');
+            if(!returning){localStorage.setItem('returning','1');setTimeout(()=>{showNotification('🎓 Welcome to AHHMGSSS!','success',3500);},1500);}
+            else{setTimeout(()=>{showNotification('👋 Welcome back!','info',3000);},1500);}
+            // 20+ Education Quotes
+            const q=["📚 \"Education is the most powerful weapon which you can use to change the world.\" — Nelson Mandela","📚 \"The roots of education are bitter, but the fruit is sweet.\" — Aristotle","📚 \"Education is not preparation for life; education is life itself.\" — John Dewey","📚 \"The beautiful thing about learning is nobody can take it away from you.\" — B.B. King","📚 \"An investment in knowledge pays the best interest.\" — Benjamin Franklin","📚 \"Education is the passport to the future, for tomorrow belongs to those who prepare for it today.\" — Malcolm X","📚 \"Live as if you were to die tomorrow. Learn as if you were to live forever.\" — Mahatma Gandhi","📚 \"Education breeds confidence. Confidence breeds hope. Hope breeds peace.\" — Confucius","📚 \"The more that you read, the more things you will know. The more that you learn, the more places you'll go.\" — Dr. Seuss","📚 \"Education is the key to unlock the golden door of freedom.\" — George Washington Carver","📚 \"Learning is a treasure that will follow its owner everywhere.\" — Chinese Proverb","📚 \"Develop a passion for learning. If you do, you will never cease to grow.\" — Anthony J. D'Angelo","📚 \"Education is not the filling of a pail, but the lighting of a fire.\" — W.B. Yeats","📚 \"The educated differ from the uneducated as much as the living from the dead.\" — Aristotle","📚 \"It is the mark of an educated mind to be able to entertain a thought without accepting it.\" — Aristotle","📚 \"Education is the movement from darkness to light.\" — Allan Bloom","📚 \"The whole purpose of education is to turn mirrors into windows.\" — Sydney J. Harris","📚 \"Education is learning what you didn't even know you didn't know.\" — Daniel J. Boorstin","📚 \"A person who won't read has no advantage over one who can't read.\" — Mark Twain","📚 \"Education's purpose is to replace an empty mind with an open one.\" — Malcolm Forbes","📚 \"The best teachers are those who show you where to look, but don't tell you what to see.\" — Alexandra K. Trenfor"];
+            document.getElementById('dailyQuote').textContent=q[Math.floor(Math.random()*q.length)];
+            document.getElementById('dailyQuote').addEventListener('click',function(){this.textContent=q[Math.floor(Math.random()*q.length)];});
+            // Snow 5 seconds
+            for(let i=0;i<3;i++){setTimeout(()=>{const s=document.createElement('div');s.style.cssText='position:fixed;top:-10px;color:#f3c26b;font-size:1rem;animation:fall 4s linear;z-index:9999;pointer-events:none;';s.textContent='❄';s.style.left=Math.random()*100+'%';document.body.appendChild(s);setTimeout(()=>s.remove(),5000);},i*800);}
+        });
+
+        // Countdown
+        function updateCountdown(){const n=new Date(),y=n.getFullYear();let t=new Date(y,5,29);if(n>t)t=new Date(y+1,5,29);document.getElementById('countdownDays').textContent=Math.floor((t-n)/(1000*60*60*24));}
+        updateCountdown();setInterval(updateCountdown,60000);
+
+        // Progress + Back to Top
+        window.addEventListener('scroll',()=>{document.getElementById('backToTop').classList.toggle('show',window.scrollY>300);document.getElementById('progressBar').style.width=(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight))*100+'%';});
+
+        // Notification
+        function showNotification(m,t='info',d=3000){const n=document.getElementById('notification');n.textContent=m;n.className='notification '+t+' show';setTimeout(()=>n.classList.remove('show'),d);}
+
+        // Image Zoom
+        function openZoom(src){document.getElementById('zoomImg').src=src;document.getElementById('zoomModal').classList.add('open');}
+
+        // Page Switching
+        (function(){const p=document.querySelectorAll('.page'),a=document.querySelectorAll('[data-page]');function s(n){p.forEach(x=>x.classList.remove('active-page'));const t=document.getElementById('page-'+n);if(t)t.classList.add('active-page');a.forEach(l=>{l.classList.remove('active');if(l.getAttribute('data-page')===n)l.classList.add('active');});window.scrollTo({top:0,behavior:'smooth'});document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('open');}
+        a.forEach(el=>{el.addEventListener('click',function(e){const n=this.getAttribute('data-page');if(n){e.preventDefault();s(n);}});});
+        if(window.location.hash){const h=window.location.hash.substring(1);if(['home','about','achievements','calendar','gallery','guide','resources','contact','biography','music'].includes(h))s(h);}})();
+
+        // Dark Mode
+        (function(){const dt=document.getElementById('darkToggleSidebar'),bd=document.body;function u(){const d=bd.classList.contains('dark-mode');dt.innerHTML=d?'<i class="fas fa-sun"></i> Light Mode':'<i class="fas fa-moon"></i> Dark Mode';}
+        if(localStorage.getItem('theme')==='dark')bd.classList.add('dark-mode');u();dt.addEventListener('click',()=>{bd.classList.toggle('dark-mode');localStorage.setItem('theme',bd.classList.contains('dark-mode')?'dark':'light');u();showNotification(bd.classList.contains('dark-mode')?'🌙 Dark Mode ON':'☀️ Light Mode ON','info',1500);});})();
+
+        // Hamburger
+        (function(){const hb=document.getElementById('hamburgerBtn'),sb=document.getElementById('sidebar'),so=document.getElementById('sidebarOverlay'),cs=document.getElementById('closeSidebar');hb.addEventListener('click',()=>{sb.classList.add('open');so.classList.add('open');});cs.addEventListener('click',()=>{sb.classList.remove('open');so.classList.remove('open');});so.addEventListener('click',()=>{sb.classList.remove('open');so.classList.remove('open');});})();
+
+        // Pomodoro
+        (function(){let ti,tt=25*60,tr=false;const td=document.getElementById('timerDisplay');function ut(){const m=Math.floor(tt/60),s=tt%60;td.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
+        document.getElementById('pomodoroStart').addEventListener('click',function(){if(tr){clearInterval(ti);tr=false;this.innerHTML='<i class=\"fas fa-play\"></i> Start';}else{tr=true;this.innerHTML='<i class=\"fas fa-pause\"></i> Pause';ti=setInterval(()=>{if(tt>0){tt--;ut();}else{clearInterval(ti);tr=false;this.innerHTML='<i class=\"fas fa-play\"></i> Start';showNotification('⏰ Time up! Take a 5-min break.','info',3000);tt=25*60;ut();}},1000);}});
+        document.getElementById('pomodoroReset').addEventListener('click',()=>{clearInterval(ti);tr=false;tt=25*60;ut();document.getElementById('pomodoroStart').innerHTML='<i class=\"fas fa-play\"></i> Start';});ut();})();
+
+        // Accordion
+        (function(){document.querySelectorAll('.accordion-header').forEach(h=>{h.addEventListener('click',function(){const b=this.nextElementSibling,i=this.querySelector('i'),o=b.classList.contains('open');document.querySelectorAll('.accordion-body').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.accordion-header i').forEach(x=>{x.classList.remove('fa-chevron-up');x.classList.add('fa-chevron-down');});if(!o){b.classList.add('open');i.classList.remove('fa-chevron-down');i.classList.add('fa-chevron-up');}});});})();
+
+        // Music
+        function toggleMusic(){const m=document.getElementById('bgMusic'),btn=document.getElementById('musicBtn');if(m.paused){m.play();btn.textContent='🎵';}else{m.pause();btn.textContent='🔇';}}
+
+        // Share
+        function shareSite(){if(navigator.share){navigator.share({title:'AHHMGSSS',text:'Art. Hachalu Hundessa Memorial School',url:location.href});}else{showNotification('📋 Link copied! Share manually.','info',2000);}}
+
+        // Rate
+        function rateSite(r){localStorage.setItem('rating',r);document.getElementById('rateMsg').textContent='⭐ You rated '+r+' stars! Thank you!';showNotification('⭐ Thanks for rating!','success',2000);}
+        (function(){const r=localStorage.getItem('rating');if(r)document.getElementById('rateMsg').textContent='⭐ Rated '+r+' stars';})();
+
+        // Random Color Theme
+        function changeAccent(){const c=['#2d5a3b','#5c402b','#1e3c2f','#8B4513','#4a6741','#3d2b1a','#1a3a2a'][Math.floor(Math.random()*7)];document.documentElement.style.setProperty('--primary',c);showNotification('🎨 Theme updated!','success',1500);}
+
+        // Install App
+        window.addEventListener('beforeinstallprompt',(e)=>{const btn=document.createElement('button');btn.textContent='📲 Install App';btn.className='btn';btn.style.cssText='position:fixed;bottom:230px;right:15px;z-index:9998;';btn.onclick=()=>e.prompt();document.body.appendChild(btn);});
+
+        // Chatbot
+        const knowledge={school:"🏫 Art. Hachalu Hundessa Memorial Gimbi Special Secondary School. Est. 2013 E.C. in Gimbi, West Wollega, Oromia. 144+ students. Building Technology focus. Motto: Educating with Purpose.",hachalu:"🎤 Art. Hachalu Hundessa (1986-2020). Singer, activist from Ambo. Voice of Oromo people. Albums: Sanyii Mootii, Waa'ee Keenya, Maal Mallisaa. Iconic song: Maalan Jiraa?. Assassinated June 29, 2020.",exams:"📝 Start 3-4 months early. Practice past papers. Join study groups. Sleep 7-8 hours. Eat healthy. Review mistakes. Consistency beats cramming!",scholarship:"🎓 Apply 6-12 months early. Prepare transcripts, recommendations, essay. Write personal story. Apply to many. Check government & NGO sites.",study:"📚 Active recall. Mind maps. Teach others. Pomodoro (25min/5min). Cornell notes. Review within 24 hours. Feynman Technique.",stress:"😰 Deep breathing. Exercise. Break tasks small. Talk to someone. Take breaks. One exam doesn't define you. Mental health first!",contact:"📍 Gimbi Town, West Wollega, Oromia. Phone: +251-901632512. Email: info@hhmemorialschool.edu.et",default:"I can help with: School info, Hachalu, Exams, Scholarships, Study tips. Ask me anything!"};
+        function sendAI(){const inp=document.getElementById('aiInput'),msg=inp.value.trim().toLowerCase();if(!msg)return;const mid=document.getElementById('aiMid');mid.innerHTML+='<div class=\"ai-msg u\">'+inp.value+'</div>';inp.value='';let reply=knowledge.default;for(let k in knowledge){if(msg.includes(k)){reply=knowledge[k];break;}}if(msg.includes('hello')||msg.includes('hi'))reply="👋 Hello! Ask about school, Hachalu, exams, or scholarships.";mid.innerHTML+='<div class=\"ai-msg b\">'+reply+'</div>';mid.scrollTop=mid.scrollHeight;}
+        function replyAI(topic){const mid=document.getElementById('aiMid');mid.innerHTML+='<div class=\"ai-msg u\">'+topic+'</div>';mid.innerHTML+='<div class=\"ai-msg b\">'+(knowledge[topic]||knowledge.default)+'</div>';mid.scrollTop=mid.scrollHeight;}
+        function toggleAI(){document.getElementById('aiBox').classList.toggle('show');if(document.getElementById('aiBox').classList.contains('show'))showNotification('💬 Ask me about school.Since,I am fake AI ,If you use the existing button,I am happy!','info',2000);}
+
+        // Search
+        const searchData=[{p:'about',t:'About School',k:'school about mission vision building technology'},{p:'achievements',t:'Achievements',k:'awards achievements guutu competition'},{p:'calendar',t:'Calendar',k:'calendar exams dates holiday registration'},{p:'gallery',t:'Gallery',k:'gallery photos images pictures video'},{p:'guide',t:'Student Guide',k:'guide study exam scholarship tips stress timer'},{p:'resources',t:'Resources',k:'resources downloads links pdf aptitude'},{p:'contact',t:'Contact',k:'contact phone email address location'},{p:'biography',t:'Hachalu Biography',k:'hachalu biography life singer activist'},{p:'music',t:'Music',k:'music albums songs youtube'}];
+        function doSearch(){const q=document.getElementById('searchInput').value.toLowerCase().trim();const r=document.getElementById('searchResults');if(q.length<2){r.innerHTML='';return;}const m=searchData.filter(i=>i.k.includes(q)||i.t.toLowerCase().includes(q));r.innerHTML=m.length?m.map(i=>'<div onclick="document.getElementById(\'searchOverlay\').classList.remove(\'open\');document.querySelector(\'[data-page='+i.p+']\').click()">🔗 '+i.t+'</div>').join(''):'<div style="padding:10px;">No results</div>';}
+
+        // Keyboard
+        document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.getElementById('searchOverlay').classList.remove('open');document.getElementById('zoomModal').classList.remove('open');}if(e.ctrlKey&&e.key==='k'){e.preventDefault();document.getElementById('searchOverlay').classList.add('open');document.getElementById('searchInput').focus();}});
+    </script>
+</body>
+</html>
