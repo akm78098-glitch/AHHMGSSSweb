@@ -167,7 +167,27 @@
         .social-icons { margin-top: 0.6rem; }
         .social-icons a { color: #e7cfaa; margin: 0 0.4rem; font-size: 1.2rem; }
         .social-icons a:hover { color: var(--accent-gold); }
-        .share-btn-float { position: fixed; bottom: 190px; right: 15px; width: 34px; height: 34px; border-radius: 50%; background: #2d5a3b; color: white; border: none; font-size: 14px; cursor: pointer; z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+      
+        .qr-section {
+    text-align: center;
+    margin: 15px 0;
+    padding: 15px;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+.qr-section img {
+    border-radius: 10px;
+    max-width: 200px;
+    height: auto;
+}
+.qr-section p {
+    font-size: 0.75rem;
+    margin-top: 6px;
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) { ... }.share-btn-float { position: fixed; bottom: 190px; right: 15px; width: 34px; height: 34px; border-radius: 50%; background: #2d5a3b; color: white; border: none; font-size: 14px; cursor: pointer; z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
         @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: block; } .hero { clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%); } .inner-container { padding: 1rem; margin: 0.8rem; } .hero h1 { font-size: 1.3rem; } .countdown-symbol { width: 32px; height: 32px; font-size: 0.9rem; } }
         @media (max-width: 400px) { .info-grid { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr 1fr; } .navbar { padding: 0.4rem 0.6rem; } .hero { padding: 1rem 0.8rem 1.5rem; } }
     </style>
